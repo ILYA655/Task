@@ -18,52 +18,16 @@ int main() {
 		}
 		else break;
 	}
-
-
-	for (auto c : str) // Нахождение подстроки из соседей
-	{
-		if (b == 0) {
-			res = c;
-			b++;
-			p = c;
-		}
-		else {
-			next = (int)c + 1;
-			prev = (int)c - 1;
-			if ((c == p || (int)p == prev || (int)p == next)) {
-				res.assign(res + c);
-			}
-			else {
-				if (res.length() > res1.length()) {
-					res1.assign(res);
-					res = { 0 };
-				}
-				else {
-					res = { 0 };
-				}
-				res = c;
-			}
-			p = c;
-		}
-	}
 	
-	if (res.length() > res1.length()) { // res1 - найденная подстрока
-		res1.assign(res);
-		res = { 0 };
-	}
-	else {
-		res = { 0 };
-	}
-	
-	for (int i = 0; i < res1.length(); i++) // нахождение подстроки максимум из 2 разных символов
+	for (int i = 0; i < str.length(); i++) // нахождение подстроки максимум из 2 разных символов
 	{
 		int j = i + 1;
-		for (; (res1[j] == res1[i] && j < res1.length()); j++);
-		if (j == res1.length()) {
+		for (; (str[j] == str[i] && j < str.length()); j++);
+		if (j == str.length()) {
 			break;
 		} 
 		int z = j + 1;
-		for (; (res1[z] == res1[i] || res1[z] == res1[j]); z++);
+		for (; (str[z] == str[i] || str[z] == str[j]); z++);
 		if ((z - i) > max)
 		{
 			max = (z - i);
@@ -71,10 +35,10 @@ int main() {
 		}
 					
 	}
-	res = res1.substr(index, max);
+	res = str.substr(index, max);
 
 	if (res == "") {
-		cout << endl << "Result: " << res1 << endl;
+		cout << endl << "Result: " << str << endl;
 	}
 	else {
 		cout << endl << "Result: " << res << endl;
