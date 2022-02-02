@@ -7,7 +7,7 @@ int main() {
 	string str;
 	string res, res1;
 	int b = 0, prev = 0, next = 0;
-	char o = 0, p = 0, h = 0;
+	char p = 0, h = 0;
 	int max = 0, index = 0;
 
 	cout << "Enter data: ";
@@ -30,7 +30,7 @@ int main() {
 		else {
 			next = (int)c + 1;
 			prev = (int)c - 1;
-			if ((c == p || (int)p == prev || (int)p == next) && (o <= 3)) {
+			if ((c == p || (int)p == prev || (int)p == next)) {
 				res.assign(res + c);
 			}
 			else {
