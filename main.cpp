@@ -5,9 +5,7 @@ using namespace std;
 int main() {
 	char ent;
 	string str;
-	string res, res1;
-	int b = 0, prev = 0, next = 0;
-	char p = 0, h = 0;
+	string res;
 	int max = 0, index = 0;
 
 	cout << "Enter data: ";
